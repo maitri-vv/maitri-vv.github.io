@@ -23,6 +23,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!--contactform script-->
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+          // https://dashboard.emailjs.com/admin/account
+          emailjs.init('Z9V6vnpTgDrBx7b4s');
+      })();
+  </script>
+
 </head>
 
 <body>
@@ -1086,21 +1097,26 @@
           </figure>
         </section>
 
+
+        <!--emailjs script-->
+        
+    
+
         <section class="contact-form">
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form id="contact-form" class="form" data-form method="post">
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" autocomplete="off" data-form-input>
+              <input type="text" name="fullname" id="name" class="form-input" placeholder="Full name" autocomplete="off" data-form-input>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" autocomplete="off" data-form-input>
+              <input type="email" name="email" id="email" class="form-input" placeholder="Email address" autocomplete="off" data-form-input>
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" autocomplete="off" data-form-input></textarea>
+            <textarea name="message" id="message" class="form-input" placeholder="Your Message" autocomplete="off" data-form-input></textarea>
 
-            <button class="form-btn" type="submit"  data-form-btn>
+            <button class="form-btn" type="button" value="sendForm" onclick="sendMail()" data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
